@@ -2,7 +2,6 @@
 #include <iostream>
 #include "Catch/include/catch.hpp"
 #include "../lengaburuOrbit.h"
-#include "../trafficEngine.h"
 #include "../lengaburuRouteOptimizer.h"
 
 #include <vector>
@@ -12,9 +11,18 @@ using std::vector;
 
 SCENARIO( "Checking Optimized routes for various weather and traffic speed combination...", "[Optimized Routes]" ) {
 	GIVEN("A set of orbits and a set of vehicles"){
-		CTrafficEngine trafficEngine;
 		CAbstractRouteOptimizer* optimizer = new CLengaburuRouteOptimizer(); 
-		trafficEngine.ConstructRouteOptimizer(optimizer);
+
+		vector<COrbit*> orbitList;
+		orbitList.push_back(new CLengaburuOrbit(ORBIT_START_POINT, ORBIT_END_POINT, 1, ORBIT_1_DISTANCE, ORBIT_1_CRATERS));
+		orbitList.push_back(new CLengaburuOrbit(ORBIT_START_POINT, ORBIT_END_POINT, 2, ORBIT_2_DISTANCE, ORBIT_2_CRATERS));
+		optimizer->BuildOrbits(orbitList);
+
+		vector<CAbstractVehicle*> vehicleList;
+		vehicleList.push_back(CAbstractVehicle::Create(BIKE_SPEED,BIKE_CRATER_TIME,BIKE)); 
+		vehicleList.push_back(CAbstractVehicle::Create(TUKTUK_SPEED,TUKTUK_CRATER_TIME,TUKTUK)); 
+		vehicleList.push_back(CAbstractVehicle::Create(SUPERCAR_SPEED,SUPERCAR_CRATER_TIME,SUPERCAR)); 
+		optimizer->BuildVehicles(vehicleList);
 
 		WHEN("The weather is Sunny"){
 			WeatherEnum w = WeatherEnum(1);
