@@ -32,6 +32,7 @@ SCENARIO( "Checking whether it can travel in the given weather...", "[Travel Wea
 				REQUIRE(v->CanTravel(w) == true);
 			}
 		}
+		delete v;
 	}
 	GIVEN("A tuktuk vehicle"){
 		CAbstractVehicle* v = CAbstractVehicle::Create(TUKTUK_SPEED,TUKTUK_CRATER_TIME,TUKTUK);
@@ -55,6 +56,7 @@ SCENARIO( "Checking whether it can travel in the given weather...", "[Travel Wea
 				REQUIRE(v->CanTravel(w) == false);
 			}
 		}
+		delete v;
 	}
 	GIVEN("A supercar vehicle"){
 		CAbstractVehicle* v = CAbstractVehicle::Create(SUPERCAR_SPEED,SUPERCAR_CRATER_TIME,SUPERCAR);
@@ -78,5 +80,6 @@ SCENARIO( "Checking whether it can travel in the given weather...", "[Travel Wea
 				REQUIRE(v->CanTravel(w) == true);
 			}
 		}
+		delete v;
 	}
 }

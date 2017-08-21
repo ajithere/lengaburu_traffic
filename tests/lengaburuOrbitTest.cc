@@ -27,6 +27,6 @@ SCENARIO( "Test Route Orbit for Craters", "[Orbit Craters]" ) {
 			}
 			
 		}
-
+		delete orb;
 	}
 }
