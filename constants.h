@@ -32,12 +32,16 @@ const int SUPERCAR_CRATER_TIME = 3; //in minutes
 const string ORBIT_START_POINT = "SilkDorb";
 const string ORBIT_MID_POINT = "RKPuram";
 const string ORBIT_END_POINT = "Halitharam";
+
 const int ORBIT_1_DISTANCE = 18; //in megamiles
 const int ORBIT_2_DISTANCE = 20; //in megamiles
 const int ORBIT_3_DISTANCE = 30; //in megamiles
+const int ORBIT_4_DISTANCE = 15; //in megamiles
+
 const int ORBIT_1_CRATERS = 20;
 const int ORBIT_2_CRATERS = 10;
 const int ORBIT_3_CRATERS = 15;
+const int ORBIT_4_CRATERS = 18;
 
 //Craters
 const double TEN_PERCENT = 0.1; //10 percent

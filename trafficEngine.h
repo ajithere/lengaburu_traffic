@@ -15,12 +15,14 @@ protected:
 	virtual void CreateRouteOptimizer() = 0;	
 	virtual void CreateOrbits() = 0;
 	virtual void CreateVehicles() = 0;
+
 public:
 	CTrafficEngine(){}
 	virtual ~CTrafficEngine(){}
+	virtual void GetOptimizedCombination(WeatherEnum w, const vector<int>& list){}
+	virtual void GetBestTravelRoute(WeatherEnum weather, const vector<int>& orbitTrafficSpeedList){}
 
 	void ConstructRouteOptimizer();
-	void GetOptimizedRoutes(WeatherEnum w, const vector<int>& list){ optimizer->GetOptimizedRoutes(w, list);}
 };
 
 #endif //_TRAFFIC_ENGINE_

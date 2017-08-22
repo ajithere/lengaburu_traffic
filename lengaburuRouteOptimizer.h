@@ -15,13 +15,16 @@ class CLengaburuRouteOptimizer : public CAbstractRouteOptimizer
 public:	
 	virtual void BuildOrbits(const vector<COrbit*>&);
 	virtual void BuildVehicles(const vector<CAbstractVehicle*>&);
-	virtual void GetOptimizedRoutes(WeatherEnum, const vector<int>&);
+	virtual void GetOptimizedCombination(WeatherEnum, const vector<int>&);
+	virtual void GetBestTravelRoute(const vector<vector<COrbit*> >&, WeatherEnum, const vector<int>&);
 
 private:
 	map <WeatherEnum, vector<CAbstractVehicle*> > vehicleList;
 	vector<COrbit*> orbitList;
 
 	int GetApplicableSpeed(int vehicleSpeed, int trafficSpeed);
+	double CalculateOrbitTime(COrbit*, CAbstractVehicle*, const int&, WeatherEnum);
+	double CalculateMultiOrbitTime(const vector<COrbit*>&, CAbstractVehicle*, const vector<int>&, WeatherEnum weather);
 };
 #endif //_LENGABURU_ROUTE_OPTIMIZER_
 

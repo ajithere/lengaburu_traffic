@@ -6,8 +6,8 @@
 
 ############## HOW TO RUN TEST CASES #####################################
 
-1. Run make test (or make all) command and it will create the exe called test
-2. Execute by running ./test
+1. Run make runtest (or make all) command and it will create the exe called runtest
+2. Execute by running ./runtest
 3. Verify that all test cases pass.
 
 ############## HOW TO CLEAN AND BUILD ALL ##################################

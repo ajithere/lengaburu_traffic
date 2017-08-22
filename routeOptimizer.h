@@ -14,7 +14,8 @@ public:
 	virtual void BuildOrbits(const vector<COrbit*>&) = 0;
 	virtual void BuildVehicles(const vector<CAbstractVehicle*>&) = 0;
 
-	virtual void GetOptimizedRoutes(WeatherEnum, const vector<int>&) = 0;
+	virtual void GetOptimizedCombination(WeatherEnum, const vector<int>&) = 0;
+	virtual void GetBestTravelRoute(const vector<vector<COrbit*> >&, WeatherEnum, const vector<int>&) = 0;
 };
 
 #endif //_AB_ROUTE_OPTIMIZER_
