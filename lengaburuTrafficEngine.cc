@@ -32,6 +32,11 @@ void CLengaburuTrafficEngine :: CreateOrbits()
 	COrbit* orbit3 = new CLengaburuOrbit(ORBIT_START_POINT, ORBIT_MID_POINT, 3, ORBIT_3_DISTANCE, ORBIT_3_CRATERS);
 	COrbit* orbit4 = new CLengaburuOrbit(ORBIT_END_POINT, ORBIT_MID_POINT, 4, ORBIT_4_DISTANCE, ORBIT_4_CRATERS);
 
+	masterOrbitList.push_back(orbit1);
+	masterOrbitList.push_back(orbit2);
+	masterOrbitList.push_back(orbit3);
+	masterOrbitList.push_back(orbit4);
+
 	//Data structure For Problem-1
 	orbitList.push_back(orbit1);
 	orbitList.push_back(orbit2);
@@ -77,11 +82,11 @@ CLengaburuTrafficEngine :: ~CLengaburuTrafficEngine()
 	delete  optimizer;
 	optimizer = 0;
 
-	for(int i=0; i<orbitList.size();++i)
-		delete orbitList[i];
+	for(int i=0; i<masterOrbitList.size();++i)
+		delete masterOrbitList[i];
 	for(int j=0; j<vehicleList.size();++j)
 		delete vehicleList[j];
 
-	orbitList.clear();
+	masterOrbitList.clear();
 	vehicleList.clear();
 }

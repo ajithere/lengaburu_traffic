@@ -10,6 +10,7 @@ class CTrafficEngine
 protected:
 	CAbstractRouteOptimizer* optimizer;
 	vector<COrbit*> orbitList;
+	vector<COrbit*> masterOrbitList;
 	vector<CAbstractVehicle*> vehicleList;
 protected:
 	virtual void CreateRouteOptimizer() = 0;	
