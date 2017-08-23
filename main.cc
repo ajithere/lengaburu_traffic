@@ -41,7 +41,7 @@ int main(int argc, char* argv[])
 
 
 
-	if ((argc == 2) && (str == "2"))
+	if (str == "2")
 	{
 		cout << "Please enter the current traffic speed in Orbit3" <<endl;
 		cin >> orbit3TrafficSpeed;
@@ -54,7 +54,7 @@ int main(int argc, char* argv[])
 
 	WeatherEnum w = WeatherEnum(wther);
 
-	if ((argc == 2) && (str == "1"))
+	if (str == "1")
 	{
 		//Getting the optimized route As per Problem -1.
 		vector<int> vOrbitTrafficSpeed;
@@ -64,7 +64,7 @@ int main(int argc, char* argv[])
 		engine->GetOptimizedCombination(w, vOrbitTrafficSpeed);
 	}
 	
-	if ((argc == 2) && (str == "2"))
+	if (str == "2")
 	{
 		//Getting the optimized route As per Problem -2.
 		vector<int> vTrafficOrbitList;
