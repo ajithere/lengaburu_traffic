@@ -40,15 +40,6 @@ int main(int argc, char* argv[])
 	cin >> orbit2TrafficSpeed;
 
 
-
-	if (str == "2")
-	{
-		cout << "Please enter the current traffic speed in Orbit3" <<endl;
-		cin >> orbit3TrafficSpeed;
-		cout << "Please enter the current traffic speed in Orbit4" <<endl;
-		cin >> orbit4TrafficSpeed;
-	}
-
 	CTrafficEngine* engine = new CLengaburuTrafficEngine();
 	engine->ConstructRouteOptimizer();
 
@@ -66,6 +57,11 @@ int main(int argc, char* argv[])
 	
 	if (str == "2")
 	{
+		cout << "Please enter the current traffic speed in Orbit3" <<endl;
+		cin >> orbit3TrafficSpeed;
+		cout << "Please enter the current traffic speed in Orbit4" <<endl;
+		cin >> orbit4TrafficSpeed;
+
 		//Getting the optimized route As per Problem -2.
 		vector<int> vTrafficOrbitList;
 		vTrafficOrbitList.push_back(orbit1TrafficSpeed);
